@@ -138,6 +138,7 @@ function updateGameArea() {
     if (myGameArea.keys && myGameArea.keys[68]) {Player.moveAngle = 3; }
     if (myGameArea.keys && myGameArea.keys[87]) {Player.speed= 2; }
     if (myGameArea.keys && myGameArea.keys[83]) {Player.speed= -2; }
+    if (myGameArea.keys && myGameArea.keys[27]) {Player.color = green; }
     Player.newPos();
     Player.update();
     Tagger.newPos();
