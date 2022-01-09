@@ -41,10 +41,10 @@
 <div class="col"><div id="cvshlr" class="container-fluid">
  <div>
  <canvas id="canvas1"></canvas>
-<button onmousedown="move()" id="down" class="mb">&darr;</button>
-<button onmousedown="move()" id="up" class="mb">&uarr;</button>
-<button onmousedown="move()" id="left" class="mb">&larr;</button>
-<button onmousedown="move()" id="right" class="mb">&rarr;</button>
+<button onmousedown="moved()" id="down" class="mb">&darr;</button>
+<button onmousedown="moveu()" id="up" class="mb">&uarr;</button>
+<button onmousedown="movel()" id="left" class="mb">&larr;</button>
+<button onmousedown="mover()" id="right" class="mb">&rarr;</button>
  </div>
  <div>
      <span>
@@ -58,7 +58,11 @@
  
 
 </div>
-
+    
+<audio autoplay>
+    
+    
+    </audio>
 
 
 
@@ -139,6 +143,18 @@ function updateGameArea() {
     if (myGameArea.keys && myGameArea.keys[87]) {Player.speed= 2; }
     if (myGameArea.keys && myGameArea.keys[83]) {Player.speed= -2; }
     if (myGameArea.keys && myGameArea.keys[27]) {Player.color = green; }
+    function moved() {
+        Player.speed = -2;
+    }
+    function moveu() {
+        Player.speed = 2;
+    }
+    function movel() {
+        Player.moveAngle = -3;
+    }
+    function mover() {
+        Player.moveAngle = 3;
+    }
     Player.newPos();
     Player.update();
     Tagger.newPos();
@@ -160,8 +176,14 @@ function updateGameArea() {
         Player.x = 475
     }
 }
+    
+    
+    
+    
 
 </script>
+    
+    
 
 
 
